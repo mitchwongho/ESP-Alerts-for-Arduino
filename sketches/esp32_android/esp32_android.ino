@@ -138,6 +138,7 @@ class MyServerCallback: public BLEServerCallbacks {
 void setupBLEServer() {
   //init BLE server
   BLEDevice::init("VESPA-32");
+  BLEDevice::setMTU(256); //<<<< MTU SIZE
   BLEServer *pServer = BLEDevice::createServer();
   pServer->setCallbacks(new MyServerCallback());
   // Alert Display Service
